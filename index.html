@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Text Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/946cabd75f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <div id="text-editor-container">
+        <!-- heading -->
+        <h1 id="text-editor-heading">My Text Editor</h1>
+        <!-- text editor box -->
+        <div id="text-editor-box">
+          <!-- icon holder -->
+          <div id="icon-holder">
+            <!-- bold-italic-underline box -->
+            <div class="icons-container">
+              <i onclick="makeBold()" class="fa fa-light fa-bold"></i>
+              <i onclick="makeItalic()" class="fa fa-light fa-italic"></i>
+              <i onclick="makeUnderline()" class="fa fa-light fa-underline"></i>
+            </div>
+
+            <!-- text-alignment-box -->
+            <div class="icons-container">
+              <i onclick="makeLeftAligned()" class="fa-solid fa-align-left"></i>
+              <i
+                onclick="makeCenterAligned()"
+                class="fa-solid fa-align-center"
+              ></i>
+              <i
+                onclick="makeRightAligned()"
+                class="fa-solid fa-align-right"
+              ></i>
+              <i
+                onclick="makeJustifiedAligned()"
+                class="fa-solid fa-align-justify"
+              ></i>
+            </div>
+
+            <!-- text-size-color-box -->
+            <div id="font-size-color-box">
+              <input
+                onclick="changeFontSize(event)"
+                type="number"
+                name="font-size"
+                id="font-size"
+                value="16"
+              />
+              <div>
+                <span onclick="makeUpperCase()">aA</span>
+              </div>
+              <input
+                type="color"
+                id="favcolor"
+                name="favcolor"
+                value="#000000"
+                onchange="changeColor(event)"
+              />
+              <br />
+              <br />
+            </div>
+          </div>
+
+          <!-- text editor -->
+          <div id="text-area-holder">
+            <textarea name="text-content" id="text-content"></textarea>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./utils/takeValueFromTextInput.js"></script>
+    <script src="./changeFontStyle.js"></script>
+    <script src="./changeFontAlignment.js"></script>
+    <script src="./changeFontColor.js"></script>
+    <script src="./changeFontCase.js"></script>
+  </body>
+</html>
